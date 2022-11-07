@@ -42,6 +42,10 @@ export class UsuarioController {
     })
     usuario: Omit<Usuario, '_id'>,
   ): Promise<Usuario> {
+
+    let ClaveGenerada = this.ServicioSeguridad.CrearClaveAleatoria();
+    let ClaveCifrada = this.ServicioSeguridad.CifrarCadena(ClaveGenerada);
+    usuario.clave = ClaveCifrada;
     return this.usuarioRepository.create(usuario);
   }
 

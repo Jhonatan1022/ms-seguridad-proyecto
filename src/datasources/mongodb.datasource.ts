@@ -4,11 +4,11 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mongodb',
   connector: 'mongodb',
-  url: 'mongodb+srv://parque_user:dzLnigF4Twt0wjf@cluster0.jhlei.mongodb.net/ParqueAtracccionesBD?retryWrites=true&w=majority',
+  url: 'mongodb+srv://atracciones_user:soz6koqCqAx9ajup@cluster0.jhlei.mongodb.net/ParqueAtracccionesBD?retryWrites=true&w=majority',
   host: 'localhost',
   port: 27017,
-  user: 'parque_user',
-  password: 'dzLnigF4Twt0wjfY',
+  user: 'atracciones_user',
+  password: 'soz6koqCqAx9ajup',
   database: 'ParqueAtracccionesBD',
   useNewUrlParser: true
 };

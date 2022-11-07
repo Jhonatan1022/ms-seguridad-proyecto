@@ -3,6 +3,8 @@ import {repository} from '@loopback/repository';
 import {CredencialesLogin} from '../models';
 import {UsuarioRepository} from '../repositories';
 import {JwtService} from './jwt.service';
+var generator = require('generate-password');
+var MD5 = require("crypto-js/md5");
 
 @injectable({scope: BindingScope.TRANSIENT})
 export class SeguridadUsuarioService {
@@ -47,6 +49,27 @@ export class SeguridadUsuarioService {
     }
 
     return respuesta;
+  }
+
+  /**
+   * Genera una clave aleatoria
+   * @returns clave generada
+   */
+
+  CrearClaveAleatoria(): string {
+    let password = generator.generate({
+      lenght: 10,
+      numbers: true,
+      symbols: true,
+      uppercase: true
+    });
+    return password;
+  }
+
+
+  CifrarCadena(cadena: string): string {
+    let CadenaCifrada = MD5(cadena).toString();
+    return CadenaCifrada;
   }
 
 }

@@ -1,4 +1,4 @@
-import {Entity, model, property, hasOne} from '@loopback/repository';
+import {Entity, hasOne, model, property} from '@loopback/repository';
 import {Rol} from './rol.model';
 
 @model({settings: {strict: false}})
@@ -23,10 +23,9 @@ export class Usuario extends Entity {
   email: string;
 
   @property({
-    type: 'string',
-    required: true,
+    type: 'string'
   })
-  clave: string;
+  clave?: string;
 
   @property({
     type: 'string',
